@@ -1,0 +1,22 @@
+{
+  "name": "LogMe (by NiceFeels)",
+  "description": "Tracks how long you've spent on reddit",
+  "version": "1.0",
+  "permissions": [
+    "tabs", "*://*/*","storage"
+  ],
+  "icons": {"128": "icon.png" },
+  "content_scripts": [
+    {
+      "matches": ["*://facebook.com/*","*://*.facebook.com/*",
+                  "*://reddit.com/*","*://*.reddit.com/*"],
+      "js": ["time.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "LogMe.html"
+  },
+  "manifest_version": 2
+}
