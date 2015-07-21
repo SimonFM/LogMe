@@ -1,4 +1,5 @@
 var data, timeIteratorR, timeIteratorF;
+var timeIteratorN, timeIteratorSP;
 
 var url = window.location.href;
 
@@ -53,4 +54,58 @@ else if(url.includes("facebook.com")){
   }
 
   var time = setInterval(function(){myTimer1()},1000);
+}
+/*
+  Otherwise we have found facebook and do the same as above.
+*/
+else if(url.includes("netflix.com")){
+  /*
+    Get the time spent on facebook and set it to the the temp to be 
+    manipulated.
+  */
+  chrome.storage.local.get(['netflixTime','timeN'], function(data) {
+  //console.log("Time Spent on facebook :", data.timeF);
+  
+   if(typeof data.timeN == "undefined" || typeof data.timeN == null) 
+    timeIteratorN = 0;
+   else timeIteratorN = data.timeN;
+});
+
+   /*
+    This function acts as a timer and is activated every second
+  */
+  function myTimer3(){
+    timeIteratorN = timeIteratorN + 1;
+    //console.log("facebook time:",timeIterator,"seconds");
+    chrome.storage.local.set({netflixTime:'netflix',timeN:timeIteratorN}, function() {});
+  }
+
+  var time = setInterval(function(){myTimer1()},1000);
+}
+/*
+  Otherwise we have found facebook and do the same as above.
+*/
+else if(url.includes("spotify.com")){
+  /*
+    Get the time spent on facebook and set it to the the temp to be 
+    manipulated.
+  */
+  chrome.storage.local.get(['spotifyTime','timeSP'], function(data) {
+  //console.log("Time Spent on facebook :", data.timeF);
+  
+   if(typeof data.timeSP == "undefined" || typeof data.timeSP == null) 
+    timeIteratorSP = 0;
+   else timeIteratorSP = data.timeSP;
+});
+
+   /*
+    This function acts as a timer and is activated every second
+  */
+  function myTimer3(){
+    timeIteratorSP = timeIteratorSP + 1;
+    //console.log("facebook time:",timeIterator,"seconds");
+    chrome.storage.local.set({spotifyTime:'spotify',timeSP:timeIteratorSP}, function() {});
+  }
+
+  var time = setInterval(function(){myTimer3()},1000);
 }

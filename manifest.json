@@ -9,6 +9,8 @@
   "content_scripts": [
     {
       "matches": ["*://facebook.com/*","*://*.facebook.com/*",
+                  "*://netflix.com/*","*://*.netflix.com/*",
+                  "*://spotify.com/*","*://*.spotify.com/*",
                   "*://reddit.com/*","*://*.reddit.com/*"],
       "js": ["time.js"],
       "run_at": "document_start"
