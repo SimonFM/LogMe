@@ -8,7 +8,8 @@ chrome.storage.local.get(['redditTime','timeR'], function(data2) {
   //console.log("Time Spent on reddit :", data2.timeR);
   if(typeof data2.timeR == "undefined" || data2.timeR == null) timeIterator = 0;
   else timeIterator = data2.timeR;
-  document.write("reddit -- ", secondsToString(timeIterator));
+  document.write("<h1>Reddit</h1><p><b> ",secondsToString(timeIterator),"</b></p>");
+  document.body.style.backgroundColor = "rgb(22, 160, 133)";
   
 });
 /*
@@ -20,7 +21,7 @@ chrome.storage.local.get(['fbTime','timeF'], function(data1) {
   //console.log("Time Spent on FB :", data1.timeF);
   if(typeof data1.timeF == "undefined" || data1.timeF == null) timeIterator = 0;
   else timeIterator = data1.timeF;
-  document.write("facebook -- ",secondsToString(timeIterator));
+  document.write("<h1>Facebook</h1><p><b> ",secondsToString(timeIterator),"</b></p>");
 });
 /*
   Found this function on stackoverflow
