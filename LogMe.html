@@ -11,6 +11,14 @@
     Facebook -> Days: Hours: Minutes: Seconds -->
     
     <script type = "text/javascript" src = "LogMe.js"></script>
+    
   </div>
+  <script>
+    myFunction(){
+      chrome.storage.local.set({redditTime:'reddit',timeF:0}, function() {});
+      chrome.storage.local.set({fbTime:'facebook',timeF:0}, function() {});
+    }
+    </script>
+    <button type = "button" onclick="myFunction()">Reset</button>
   </body>
 </html>
