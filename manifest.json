@@ -1,7 +1,7 @@
 {
-  "name": "LogMeTime (by NiceFeels)",
-  "description": "Tracks how long you've spent on reddit and facebook",
-  "version": "1.0",
+  "name": "Time Me!",
+  "description": "Calculates how long you've spent on reddit and facebook",
+  "version": "1.5",
   "permissions": [
     "tabs", "*://*/*","storage"
   ],
